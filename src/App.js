@@ -19,7 +19,7 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path='/'>
-            <Home />
+            <Home allItems={allItems} setAllItems={setAllItems} />
           </Route>
           <Route exact path='/profile'>
             <UserProfile />
