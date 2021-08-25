@@ -1,28 +1,37 @@
 import { useEffect } from "react";
+import { getAllItems } from "../Utils/api";
 
-const Home = ({ allItems, setAllItems }) => {
+const Home = ({ items, setItems }) => {
   useEffect(() => {
-    fetch("https://nc-marketplace.herokuapp.com/api/items")
-      .then((res) => res.json())
-      .then((data) => {
-        setAllItems(data.items);
+    getAllItems().then((allItems) => {
+      setItems(allItems);
     });
   }, []);
 
+//   useEffect(() => {
+
+//   }, [items]);
+
   return (
     <div>
-      <p>Home page</p>
+      <button>All</button>
+      <button>Clothing</button>
+      <button>Electronics</button>
+      <button>Household</button>
       <ul>
-        {allItems.map((item) => {
+        {items.map((item) => {
           return (
             <li key={item.item_id}>
-              <div className='item-card'>
-                <img src={item.img_url} alt={`item_image_${item.item_id}`}></img>
+              <div className="item-card">
+                <img
+                  src={item.img_url}
+                  alt={`item_image_${item.item_id}`}
+                ></img>
                 <div>
-                    <h3>{item.item_name}</h3>
-                    <h4>{`£${item.price / 100}`}</h4>
-                    <h5>{item.category_name}</h5>
-                    <p>{item.description}</p>
+                  <h3>{item.item_name}</h3>
+                  <h4>{`£${item.price / 100}`}</h4>
+                  <h5>{item.category_name}</h5>
+                  <p>{item.description}</p>
                 </div>
               </div>
             </li>
