@@ -9,7 +9,7 @@ import { useState } from "react";
 function App() {
   const [basket, setBasket] = useState([]);
   const [items, setItems] = useState([]);
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState('Guest');
   const [blacklist, setBlacklist] = useState([]);
   const [orderHistory, setOrderHistory] = useState([]);
 
@@ -19,7 +19,7 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path='/'>
-            <Home items={items} setItems={setItems} />
+            <Home items={items} setItems={setItems} user={user}/>
           </Route>
           <Route exact path='/profile'>
             <UserProfile />

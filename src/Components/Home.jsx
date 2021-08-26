@@ -1,23 +1,37 @@
 import { useEffect } from "react";
-import { getAllItems } from "../Utils/api";
+import { getAllItems, getItemsByCategory } from "../Utils/api";
 
-const Home = ({ items, setItems }) => {
-  useEffect(() => {
+const Home = ({ items, setItems, user }) => {
+  
+  const resetAllItems = () => {
     getAllItems().then((allItems) => {
       setItems(allItems);
     });
+  };
+
+  useEffect(() => {
+    resetAllItems();
   }, []);
 
-//   useEffect(() => {
-
-//   }, [items]);
+  const displayItemsByCategory = (category) => {
+    getItemsByCategory(category).then((filteredItems) => {
+      setItems(filteredItems);
+    });
+  };
 
   return (
     <div className="Home">
-      <button>All</button>
-      <button>Clothing</button>
-      <button>Electronics</button>
-      <button>Household</button>
+      <h2>Welcome {user}</h2>
+      <button onClick={() => resetAllItems()}>All</button>
+      <button onClick={() => displayItemsByCategory("Clothing")}>
+        Clothing
+      </button>
+      <button onClick={() => displayItemsByCategory("Electronics")}>
+        Electronics
+      </button>
+      <button onClick={() => displayItemsByCategory("Household")}>
+        Household
+      </button>
       <ul>
         {items.map((item) => {
           return (

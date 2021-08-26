@@ -7,9 +7,9 @@ export const getAllItems = () => {
 };
 
 export const getItemsByCategory = (category) => {
-    return fetch(`https://nc-marketplace.herokuapp.com/api/items?category_name=${category}`)
-      .then((res) => res.json())
-      .then((data) => {
-        return data.items;
-      });
-  };
+  return fetch(`https://nc-marketplace.herokuapp.com/api/items?category_name=${category}`)
+    .then((res) => res.json())
+    .then((data) => {
+      return data.items;
+    });
+};
