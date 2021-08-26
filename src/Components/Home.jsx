@@ -13,7 +13,7 @@ const Home = ({ items, setItems }) => {
 //   }, [items]);
 
   return (
-    <div>
+    <div className="Home">
       <button>All</button>
       <button>Clothing</button>
       <button>Electronics</button>
@@ -29,7 +29,7 @@ const Home = ({ items, setItems }) => {
                 ></img>
                 <div>
                   <h3>{item.item_name}</h3>
-                  <h4>{`£${item.price / 100}`}</h4>
+                  <h4>{`£${(item.price / 100).toFixed(2)}`}</h4>
                   <h5>{item.category_name}</h5>
                   <p>{item.description}</p>
                 </div>

@@ -1,6 +1,6 @@
 const UserProfile = () => {
     return (
-        <div>
+        <div className="UserProfile">
             <p>My profile</p>
         </div>
     );

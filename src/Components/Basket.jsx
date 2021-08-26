@@ -1,6 +1,6 @@
 const Basket = () => {
     return (
-        <div>
+        <div className="Basket">
             <p>Basket</p>
         </div>
     );
