@@ -42,6 +42,10 @@ nav div {
   padding-top: 50px;
 }
 
+.ProfileList {
+  padding-top: 50px;
+}
+
 .UserProfile {
   padding-top: 50px;
 }
@@ -54,6 +58,10 @@ ul {
   justify-content: center;
 }
 
+.category_buttons {
+
+}
+
 .item-card {
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -64,7 +72,7 @@ ul {
 }
 
 .item-card:hover {
-  /* box-shadow: 0 0 10px 5px #eb1b25; */
+  cursor: pointer;
   transform: scale(1.03, 1.03);
   background-color: #eb1b25;
   color: white;
@@ -79,4 +87,35 @@ ul {
   padding-left: 1rem;
   padding-right: 1rem;
   text-align: left;
+}
+
+.user__card {
+  width: 200px;
+  height: 300px;
+  background-color: rgb(190, 190, 190);
+  margin: 1rem;
+}
+
+.user__card:hover {
+  transform: scale(1.03, 1.03);
+  background-color: #eb1b25;
+  color: white;
+}
+
+.user__card:active {
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+}
+
+.user__card img {
+  height: 128px;
+  width: 128px;
+  border-radius: 50%;
+}
+
+.UserProfile img {
+  height: 128px;
+  width: 128px;
+  border-radius: 50%;
 }

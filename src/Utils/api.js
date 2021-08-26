@@ -13,3 +13,19 @@ export const getItemsByCategory = (category) => {
       return data.items;
     });
 };
+
+export const getAllUsers = () => {
+  return fetch("https://nc-marketplace.herokuapp.com/api/users")
+    .then((res) => res.json())
+    .then((data) => {
+      return data.users;
+    });
+}
+
+export const getSingleUser = (username) => {
+  return fetch(`https://nc-marketplace.herokuapp.com/api/users/${username}`)
+    .then((res) => res.json())
+    .then((data) => {
+      return data.user;
+    });
+}

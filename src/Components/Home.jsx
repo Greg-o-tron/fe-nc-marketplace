@@ -22,14 +22,14 @@ const Home = ({ items, setItems, user }) => {
   return (
     <div className="Home">
       <h2>Welcome {user}</h2>
-      <button onClick={() => resetAllItems()}>All</button>
-      <button onClick={() => displayItemsByCategory("Clothing")}>
+      <button className="category_buttons" onClick={() => resetAllItems()}>All</button>
+      <button className="category_buttons" onClick={() => displayItemsByCategory("Clothing")}>
         Clothing
       </button>
-      <button onClick={() => displayItemsByCategory("Electronics")}>
+      <button className="category_buttons" onClick={() => displayItemsByCategory("Electronics")}>
         Electronics
       </button>
-      <button onClick={() => displayItemsByCategory("Household")}>
+      <button className="category_buttons" onClick={() => displayItemsByCategory("Household")}>
         Household
       </button>
       <ul>
